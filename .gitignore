@@ -2,7 +2,7 @@ node_modules
 npm-debug.log
 error.log
 combined.log
-package-lock.json
+.log
 .vscode
 .idea
 .DS_Store
@@ -15,5 +15,13 @@ tmp
 *.iml
 coverage
 .env
+app-minimal/
+dump.rdb
+Session.vim
 
 .now
+.vercel
+
+assets/build/
+package-lock.json
+pnpm-lock.yaml

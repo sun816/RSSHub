@@ -12,7 +12,7 @@ pageClass: routes
 
 ### App Store/Mac App Store
 
-见 [#app-store-mac-app-store](/en/program-update.html#app-store-mac-app-store)
+See [#app-store-mac-app-store](/en/program-update.html#app-store-mac-app-store)
 
 ## AutoTrader
 
@@ -51,6 +51,24 @@ Official Website: [https://www.ssm.gov.mo/apps1/PreventWuhanInfection/en.aspx](h
 
 <RouteEn author="Gnnng" example="/coronavirus/sg-moh" path="/coronavirus/sg-moh"/>
 
+### Yahoo Japan COVID19 news collection
+
+Official Website: <https://news.yahoo.co.jp/pages/article/20200207>
+
+<RouteEn author="sgqy" example="/coronavirus/yahoo-japan" path="/coronavirus/yahoo-japan/:tdfk?" :paramsDesc="['Romaji of Todofuken. Can be got from URLs on area detail page. Example: kyoto']"/>
+
+## Darwin Awards
+
+### Award Winners
+
+<RouteEn author="zoenglinghou nciztzk" example="/darwinawards" path="/darwinawards" />
+
+## dcinside
+
+### board
+
+<RouteEn author="zfanta" example="/dcinside/board/programming" path="/dcinside/board/:id" :paramsDesc="['board id']" />
+
 ## DHL
 
 ### DHL express
@@ -63,7 +81,7 @@ Official Website: [https://www.ssm.gov.mo/apps1/PreventWuhanInfection/en.aspx](h
 
 > Only support IMAP protocol, email password and other settings refer to [Email setting](/en/install)
 
-<RouteEn author="kt286" example="/mail/imap/rss@rsshub.app" path="/mail/imap/:email" :paramsDesc="['Email account']" />
+<RouteEn author="kt286" example="/mail/imap/rss@rsshub.app" path="/mail/imap/:email" :paramsDesc="['Email account']" selfhost="1"/>
 
 ## Emi Nitta official website
 
@@ -75,11 +93,18 @@ Official Website: [https://www.ssm.gov.mo/apps1/PreventWuhanInfection/en.aspx](h
 
 <RouteEn author="luyuhuang" example="/emi-nitta/news" path="/emi-nitta/news"/>
 
+## Fisher Spb
+
+### News
+
+<RouteEn author="denis-ya" example="/fisher-spb/news" path="/fisher-spb/news" />
+
 ## HackerOne
 
 ### HackerOne Hacker Activity
 
-<Route author="imlonghao" example="/hackerone/hacktivity" path="/hackerone/hacktivity" radar="1"/>
+<RouteEn author="imlonghao" example="/hackerone/hacktivity" path="/hackerone/hacktivity" radar="1" rssbud="1"/>
+<RouteEn author="imlonghao" example="/hackerone/search/rocket_chat" path="/hackerone/search/:search" :paramsDesc="['Search string']" radar="1" rssbud="1"/>
 
 ## Instapaper
 
@@ -91,11 +116,99 @@ Official Website: [https://www.ssm.gov.mo/apps1/PreventWuhanInfection/en.aspx](h
 
 ### Track & Trace Service
 
-<RouteEn author="tuzi3040" example="/japanpost/EJ123456789JP/en" path="/japanpost/:reqCode/:locale?" :paramsDesc="['Package Number', 'Language, default to japanese `ja`']" radar="1">
+<RouteEn author="tuzi3040" example="/japanpost/track/EJ123456789JP/en" path="/japanpost/track/:reqCode/:locale?" :paramsDesc="['Package Number', 'Language, default to japanese `ja`']" radar="1" rssbud="1">
 
 | Japanese | English |
 | -------- | ------- |
 | ja       | en      |
+
+</RouteEn>
+
+## King Arthur
+
+### Baking
+
+<RouteEn author="loganrockmore" example="/kingarthur/story" path="/instapaper/:category">
+
+| Story | Recipes | Tips and Techniques |
+| ----- | ------- | ------------------- |
+| story | recipes | tips-and-techniques |
+
+</RouteEn>
+
+## Layoffs.fyi
+
+### Layoff Data Tracker
+
+<RouteEn author="BrandNewLifeJackie26" example="/layoffs" path="/layoffs" radar="1"/>
+
+RSS source in the original site is outdated.
+
+## Lever
+
+### Recruitment
+
+<RouteEn author="tsarlewey" example="/lever/lever" path="/lever/:domain" :paramsDesc="['Company with Lever Board']"/>
+
+## LinkedIn
+
+### Jobs
+
+<RouteEn author="BrandNewLifeJackie26" example="/linkedin/jobs/C-P/1/software engineer" path="/linkedin/jobs/:job_types/:exp_levels/:keywords?" :paramsDesc="['See the following table for details, use \'-\' as delimiter', 'See the following table for details, use \'-\' as delimiter', 'keywords']" radar="1">
+
+#### `job_types` list
+
+| Full Time | Part Time | Contractor | All |
+| --------- | --------- | ---------- | --- |
+| F         | P         | C          | all |
+
+#### `exp_levels` list
+
+| Intership | Entry Level | Associate | Mid-Senior Level | Director | All |
+| --------- | ----------- | --------- | ---------------- | -------- | --- |
+| 1         | 2           | 3         | 4                | 5        | all |
+
+For example:
+1. If we want to search software engineer jobs of all levels and all job types, use `/linkedin/jobs/all/all/software engineer`
+2. If we want to search all entry level contractor/part time software engineer jobs, use `/linkedin/jobs/P-C/2/software engineer`
+
+**To make it easier, the recommended way is to start a search on <a href="https://www.linkedin.com/jobs/search">LinkedIn</a> and use <a href="https://github.com/DIYgod/RSSHub-Radar">RSSHub Radar</a> to load the specific feed.**
+
+</RouteEn>
+
+## MITRE
+
+### All Publications
+
+<RouteEn author="sbilly" example="/mitre/publications" path="/mitre/publications" />
+
+## Mozilla
+
+### Firefox Monitor
+
+<RouteEn author="TonyRL" example="/firefox/breaches" path="/firefox/breaches"/>
+
+## Nobel Prize
+
+### List
+
+<RouteEn author="nczitzk" example="/nobelprize" path="/nobelprize/:caty" :paramsDesc="['Category, see below, all by default']">
+
+| Physics | Chemistry | Physiology or Medicine | Literature | Peace | Economic Science  |
+| ------- | --------- | ---------------------- | ---------- | ----- | ----------------- |
+| physics | chemistry | physiology-or-medicine | literature | peace | economic-sciences |
+
+</RouteEn>
+
+## Panda
+
+### Feeds
+
+<RouteEn author="lyrl" example="/usepanda/feeds/5718e53e7a84fb1901e059cc" path="/usepanda/feeds/:id" :paramsDesc="['Feed ID']">
+
+| Channel | feedId                   |
+| ------- | ------------------------ |
+| Github  | 5718e53e7a84fb1901e059cc |
 
 </RouteEn>
 
@@ -117,14 +230,14 @@ Official Website: [https://www.ssm.gov.mo/apps1/PreventWuhanInfection/en.aspx](h
 
 ### Today Popular
 
-<RouteEn author="miaoyafeng" example="/producthunt/today" path="/producthunt/today">
+<RouteEn author="miaoyafeng Fatpandac" example="/producthunt/today" path="/producthunt/today">
 </RouteEn>
 
 ## Remote.work
 
 ### Remote.work Job Information
 
-<RouteEn author="luyuhuang" example="/remote-work/all" path="/remote-work/:caty?" :paramsDesc="['Job category, default to all']" radar="1">
+<RouteEn author="luyuhuang" example="/remote-work/all" path="/remote-work/:caty?" :paramsDesc="['Job category, default to all']" radar="1" rssbud="1">
 
 | All Jobs | Development | Design | Operation | Product | Other | Marketing | Sales |
 | :------: | :---------: | :----: | :-------: | :-----: | :---: | :-------: | :---: |
@@ -138,17 +251,19 @@ Official Website: [https://www.ssm.gov.mo/apps1/PreventWuhanInfection/en.aspx](h
 
 <RouteEn author="sbilly" example="/sans/summit_archive" path="/sans/summit_archive" />
 
-## TransferWise
+## Trending Search Keyword Aggregator
 
-### FX Pair Yesterday
+### Aggregated Keyword Tracker
 
-<RouteEn author="HenryQW" example="/transferwise/pair/GBP/USD" path="/transferwise/pair/:source/:target" :paramsDesc="['Base currency abbreviation','Quote currency abbreviation']">
+Track entries containing specific keywords on major social media platforms.
 
-Refer to [the list of supported currencies](https://transferwise.com/tools/exchange-rate-alerts/).
+Current listings: _Weibo Search_、_Toutiao Search_、_Zhihu Search_、_Zhihu Videos_、_Zhihu Topics_。
 
-</RouteEn>
+Data Source: [trending-in-one](https://github.com/huqi-pr/trending-in-one)
 
-## TSSstatus（iOS downgrade channel）
+<RouteEn author="Jkker" example="/trending/taiwan/3" path="/trending/:keywords/:numberOfDays?" radar="1" :paramsDesc="['List of keywords separated by commas', 'Number of previous days (defaults to 3)']"/>
+
+## TSSstatus (iOS downgrade channel)
 
 ### Status
 
@@ -177,3 +292,23 @@ Type
 | all | rec       |
 
 </RouteEn>
+
+## Wise
+
+### FX Pair Yesterday
+
+<RouteEn author="HenryQW" example="/wise/pair/GBP/USD" path="/wise/pair/:source/:target" :paramsDesc="['Base currency abbreviation','Quote currency abbreviation']" radar="1">
+
+Refer to [the list of supported currencies](https://wise.com/tools/exchange-rate-alerts/).
+
+</RouteEn>
+
+## 裏垢女子まとめ
+
+### Homepage
+
+<RouteEn author="SettingDust Halcao" example="/uraaka-joshi" path="/uraaka-joshi" radar="1" rssbud="1" puppeteer="1"/>
+
+### User
+
+<RouteEn author="SettingDust Halcao" example="/uraaka-joshi/_rrwq" path="/uraaka-joshi/:id" :paramsDesc="['User ID']" radar="1" rssbud="1" puppeteer="1"/>
